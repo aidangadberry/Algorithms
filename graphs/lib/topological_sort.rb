@@ -31,3 +31,26 @@ def topological_sort(vertices)
   order
 end
 
+
+# Tarjan's
+
+# def topological_sort(vertices)
+#   visited = []
+
+#   vertices.each do |vertex|
+#     visit(vertex, visited)
+#   end
+
+#   visited
+# end
+
+# def visit(vertex, visited)
+#   return if visited.include?(vertex) || vertex.out_edges.empty?
+#   visited << vertex
+  
+#   vertex.out_edges.each do |edge|
+#     return if visited.include?(edge.to_vertex)
+#     visit(edge.to_vertex, visited)
+#   end
+
+# end
