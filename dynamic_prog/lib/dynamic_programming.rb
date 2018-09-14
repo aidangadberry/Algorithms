@@ -66,14 +66,13 @@ class DynamicProgramming
 
   def super_frog_cache_builder(n, k)
     cache = {
-      1 => [[1]]
+      0 => [[]]
     }
 
-    (2..n).each do |i|
+    (1..n).each do |i|
       hops = []
-      hops << [i] unless k < i
       
-      (i - 1).downto(i - k < 1 ? 1 : i - k).each do |j|
+      (i - 1).downto(i - k < 0 ? 0 : i - k).each do |j|
         hops += cache[j].map {|steps| steps.dup << i - j}
       end
 
